@@ -55,6 +55,7 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", grounded);
         anim.SetBool("falling", falling);
+        Debug.Log(countCol);
     }
 
     private void Jump()
@@ -77,7 +78,8 @@ public class PlayerMove : MonoBehaviour
         if(collision.gameObject.tag == "Ground" )
             if(countCol > 1)
                 countCol--;
-            else if(countCol == 1)
+            
+            if(countCol == 1)
                 grounded = false;
     }
 
